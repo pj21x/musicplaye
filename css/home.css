@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#home {
+        display: block;
+}
+#all-songs {
+        display: none;
+}
+#about {
+        display: none;
+}
+
+.home-content {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+  transition: transform .2s;
+  transform: scale(1.05); 
+}
+
+
+
+/* Remove extra left and right margins, due to padding */
+.row {
+  /*margin: 0 -5px;*/
+  margin-top: 30px;
+  margin-left: 130px;
+  margin-right: 130px;
+}
+
+.top-row {
+  margin-top: 70px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    margin: 0;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 #434343;
+  padding: 16px;
+  text-align: center;
+  height: 260px;
+  /*background-color: #f1f1f1;*/
+  /*background-image: linear-gradient(to bottom, #FFDA45, #008037);*/
+  color: white;
+}
+
+
+#home {
+  display: block;
+}
+
+
+.float-left {
+  display: flex;
+}
+.float-left div h3 {
+  margin-left: 20px;
+}
+.c-img {
+  float: left;
+  left: 5px;
+}
+.c-img img {
+  border-radius: 15px;
+  box-shadow: 0 3px 5px 0 #434343;
+}
+.c-title {
+  margin-left: 10px;
+}
+
+.zoom {
+  transition: transform .2s;
+  transform: scale(1); 
+}
+.zoom:hover {
+  -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
+  transform: scale(1.05);
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 80px; /* Location of the box */
+  left: 0;
+  top: 0px; /*gap from top*/
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  transition: 0.5s;
+}
+/* Modal Content */
+.modal-content {
+  border-radius: 15px;
+  /*background-image: linear-gradient(to bottom, #995C20, #0F5D08);*/
+  margin: auto;
+  margin-bottom: 200px;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.m-img img {
+  width: 150px;
+  height: 150px;
+}
+.m-title {
+  padding-top: 20px;
+  margin-left: 200px;
+  font-size: 50px;
+  color: white;
+}
+.m-sub-title {
+  margin: 20px 0px -50px 200px;
+  font-size: 20px;
+  color: white;
+}
+
+div::-webkit-scrollbar {
+  display: none;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  padding-top: -10;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.model-song {
+  padding-top: 120px;
+}
+.c1 {
+  /*background-image: linear-gradient(to bottom, #FFDA45, #008037);*/
+  background-image: linear-gradient(to bottom, #EFF54D, #00AC61);
+}
+.c2 {
+  background-image: linear-gradient(to bottom, #38B6FF, #236B94);
+}
+.c3 {
+  background-image: linear-gradient(to bottom, #F415ED, #3A0339);
+}
+.c4 {
+  background-image: linear-gradient(to bottom, #E1A2B8, #9F2BC1);
+}
+.c9 {
+  background-image: linear-gradient(to bottom, #FF9F4A, #FF3C83);
+}
+.c10 {
+  background-image: linear-gradient(to bottom, #FED54A, #FF9347);
+}
+.c11 {
+  background-image: linear-gradient(to bottom, #FF4331, #D31A50);
+}
+.c12 {
+  background-image: linear-gradient(to bottom, #FD297A, #9424F0);
+}
+
+.mdl1 {
+  background-image: linear-gradient(to bottom, #995C20, #0F5D08);
+}
+.mdl2 {
+  background-image: linear-gradient(to bottom, #3B9AD1, #06141B);
+}
+.mdl3 {
+  background-image: linear-gradient(to bottom, #BF08B9, #3D003D);
+}
+.mdl4 {
+  background-image: linear-gradient(to bottom, #E1A2B8, #9F2BC1);
+}
+.mdl9 {
+  background-image: linear-gradient(to bottom, #FF9F4A, #FF3C83);
+}
+.mdl10 {
+  background-image: linear-gradient(to bottom, #FED54A, #FF9347);
+}
+.mdl11 {
+  background-image: linear-gradient(to bottom, #FF4331, #D31A50);
+}
+.mdl12 {
+  background-image: linear-gradient(to bottom, #FD297A, #9424F0);
+}

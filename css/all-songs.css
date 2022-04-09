@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.all-songs-content {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row1 {
+  /*margin: 0 -5px;*/
+  margin-top: 140px;
+  margin-left: 138px;
+  margin-right: 139px;
+}
+
+/* Clear floats after the columns */
+.row1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column1 {
+    width: 100%;
+    display: block;
+    margin-left: 65px;
+    margin-right: 65px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card1 {
+  display: flex;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 #434343;
+  padding: 0;
+  margin-top: 10px;
+  height: 50px;
+  width: 100%;
+  background-color: #f1f1f1;
+  z-index: -1;
+}
+
+ul {
+  margin-left: 0px;
+  padding: 0px;
+}
+
+.search {
+  position: fixed;
+  top: 60px;
+  width: 81.9%;
+  padding: 0px;
+  z-index: 1;
+
+}
+
+#myInput {
+  background-color: #f1f1f1;
+  width: 99%;
+  font-size: 16px;
+  padding: 10px 20px 10px 40px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  margin-top: 5px;
+  margin-left: 6px; 
+}
+
+
+.flex {
+  display: flex;
+  width: 100%;
+}
+.flex .i {
+  width: 20px;
+}
+.flex .t {
+  margin-right: 10px;
+  width: 170px;
+}
+.rflex {
+  float: right;
+  display: flex;
+}
+.rflex .album {
+  font-weight: normal;
+  margin: 0 0 0 20px;
+  width: 300px;
+}
+.rflex .dur {
+  font-weight: normal;
+  margin: 0 100px 0 0;
+}
+.index {
+  margin: 0 10px 0 10px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.sub-ttl {
+  font-weight: normal;
+}
+.list-img img{
+  height: 40px;
+  width: 40px;
+  margin: 5px 20px 0 0;
+}

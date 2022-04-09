@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.15s;
+}
+
+.topnav {
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 2;
+}
+
+.menu {
+  max-width: 900px;
+  margin-left: auto;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-size: 17px;
+  margin: 6px 7px -2px 7px;
+  overflow: hidden;
+  color: white;
+}
+
+.topnav div.menu {
+  padding-bottom: 60px;
+}
+
+.topnav a.home {
+  border-bottom: 2px solid red;
+}
+
+.login-container {
+  padding-right: 20px;
+  float: right;
+}
+
+#atag {
+  background-color: white;
+  color: white;
+}
+
+.home:hover {
+  border-top: 2px solid red;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.all-songs:hover {
+  border-top: 2px solid red;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.about:hover {
+  border-top: 2px solid red;
+  font-size: 20px;
+  border-radius: 5px;
+}

@@ -1,0 +1,160 @@
+body {
+}
+
+#bg {
+        margin: 0;
+        background-image: linear-gradient(to bottom, #df80ff, 200px, #13001a);
+        filter: brightness(70%);
+        position: fixed;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+}
+
+a {
+	text-decoration: none;
+}
+
+#play-bar {
+        background-image: linear-gradient(to bottom, #df80ff, #000);
+        width: 82%;
+        height: 80px;
+        margin: 0px;
+        position: fixed;
+        left: 9%;
+        bottom: 20px;
+        border-radius: 15px;
+        z-index: 4;
+}
+
+iframe {
+	border-radius: 15px;
+}
+
+#art {
+        position: absolute;
+        top: 8px;
+        left: 20px;
+        margin: 0;
+        border: 2px solid;
+        width: 40px;
+        height: 100%;
+}
+
+.img-container {
+        position: relative;
+        left: 0px;
+        margin: 0px;
+        padding: 0px;
+}
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.cel {
+  float: left;
+  width: auto;
+  margin: 0px;
+  padding: 0 10px;
+}
+
+/* Clear floats after the columns */
+.cel:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .cel {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.cel-c {
+  padding: 0px;
+  margin: 0px;
+  height: 80px;
+  /*background-color: #ababab;*/
+  color: white;
+}
+
+.h3 {
+  margin: 0px;
+}
+
+.cel-1 {
+  margin-left: -10px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.cel-1 img {
+  width: 100px;
+  height: 100%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.cel-2 .cel-2-cnt {
+  padding: 18px 0 0 0;
+}
+.cel-2 .p-s-nm {
+  margin: 0px;
+  padding: 0px 10px 0 10px;
+}
+.cel-2 .p-a-nm {
+  margin: 0px;
+  padding: 5px 10px 0 10px;
+  font-size: 12px;
+}
+
+.cel-3 {
+  position: absolute;
+  left: 36.2%;
+  width: 350px;
+}
+
+.cel-4 {
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+  border-radius: 15px;
+}
+.cel-4 h3 {
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.lin {
+  float: left;
+  margin-left: 5px;
+  margin-right: 5px;
+  
+}
+.sub-time-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  align-content: center;
+}
+
+#about {
+  margin: 100px 0 100px 0;
+  color: white;
+  width: 60%;
+}
