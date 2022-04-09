@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Music Player</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+	<link rel="stylesheet" type="text/css" href="css/topnav.css">
+        <link rel="stylesheet" type="text/css" href="css/home.css">
+        <link rel="stylesheet" type="text/css" href="css/all-songs.css">
+        <link rel="stylesheet" type="text/css" href="css/music.css">
+</head>
+<body><div id="bg"></div>
+<!-- Top Navigation  -->
+	<div class="topnav"><div class="menu">
+		        <a class="home"      id="home1"       onclick="home()">       Home         </a>
+                        <a class="all-songs" id="all-songs1"  onclick="allsongs()">   All Songs    </a>
+  	          	<a class="about"     id="about1"      onclick="about()">      About        </a>
+                        <div class="login-container"><a href="useraccounts/registration.php" class="atag">Login</a></div>
+        </div></div>
+<!-- Top Navigation  -->
+
+<!-- Home  -->
+        <div class="home-content" id="home">
+                <div class="row top-row">
+                        <div class="column zoom" id="c1">
+                                <div class="card c1"><div class="float-left">
+                                        <div class="c-img"><img src="media/cover/playlist/Top-10-India.png" width="100px" height="100px"></div>
+                                        <div class="c-title"><h3>Top 10 in INDIA</h3></div>
+                                </div><hr>
+                                <div><p>Collection of the most played tracks right now - India.</p></div></div>
+                        </div>
+                        <div class="column zoom" id="c2">
+                                <div class="card c2"><div class="float-left">
+                                        <div class="c-img"><img src="media/cover/playlist/Top-10-World.png" width="100px" height="100px"></div>
+                                        <div><h3>Top 10 in World</h3></div>
+                                </div><hr>
+                                <div><p>Collection of the most played tracks right now - World.</p></div></div>
+                        </div>
+                        <div class="column zoom" id="c3">
+                                <div class="card c3">
+                                        <div class="float-left">
+                                                <div class="c-img">
+                                                        <img src="media/cover/playlist/Top-10-Dj.png" width="100px" height="100px">
+                                                </div>
+                                                <div>
+                                                        <h3>Top 10 Trending Dj</h3>
+                                                </div>
+                                        </div>
+                                        <hr>
+                                        <div>
+                                                <p>Never Stop the party with Top 10 Dj Songs</p>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="column zoom" id="c4">
+                                <div class="card c4">
+                                        <div class="float-left">
+                                                <div class="c-img">
+                                                        <img src="media/cover/playlist/Top-10-Lofi.png" width="100px" height="100px">
+                                                </div>
+                                                <div>
+                                                        <h3>Lofi Special Music</h3>
+                                                </div>
+                                        </div>
+                                        <hr>
+                                        <div>
+                                                <p>Your one stop Destination for your late night mood</p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="column zoom" id="c9">
+                                <div class="card c9">
+                                        <div class="float-left">
+                                                <div class="c-img">
+                                                        <img src="media/cover/playlist/Top-10-Party.png" width="100px" height="100px">
+                                                </div>
+                                                <div>
+                                                        <h3>Party Special</h3>
+                                                </div>
+                                        </div>
+                                        <hr>
+                                        <div>
+                                                <p>Get the Party Started, best songs for any occasions</p>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="column zoom" id="c10">
+                                <div class="card c10">
+                                        <div class="float-left">
+                                                <div class="c-img">
+                                                        <img src="media/cover/playlist/Independence-Day.png" width="100px" height="100px">
+                                                </div>
+                                                <div>
+                                                        <h3>Independence Day</h3>
+                                                </div>
+                                        </div>
+                                        <hr>
+                                        <div>
+                                                <p>The most loved patriotic tunes to celebrate India.</p>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="column zoom" id="c11">
+                                <div class="card c11">
+                                        <div class="float-left">
+                                                <div class="c-img">
+                                                        <img src="media/cover/playlist/Hindi.png" width="100px" height="100px">
+                                                </div>
+                                                <div>
+                                                        <h3>Hindi</h3>
+                                                </div>
+                                        </div>
+                                        <hr>
+                                        <div>
+                                                <p>Hottest Hindi music served here.</p>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="column zoom" id="c12">
+                                <div class="card c12">
+                                        <div class="float-left">
+                                                <div class="c-img">
+                                                        <img src="media/cover/playlist/English.png" width="100px" height="100px">
+                                                </div>
+                                                <div>
+                                                        <h3>English</h3>
+                                                </div>
+                                        </div>
+                                        <hr>
+                                        <div>
+                                                <p>Trending English Songs</p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+
+        </div>
+<!-- Home Ends -->
+
+<!-- Model Starts -->
+        <div id="myModal1" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content mdl1">
+                        <span class="close 1">&times;</span>
+                        <div>
+                                <div class="c-img m-img">
+                                        <img src="media/cover/playlist/Top-10-India.png" width="100px" height="100px">
+                                </div>
+                                <div>
+                                        <div class="m-title"><b>Top 10 in India</b></div>
+                                        <div class="m-sub-title">Collection of the most played tracks right now - India.</div>
+                                </div>
+                        </div>
+                        <div class="model-song">
+                        <div class="card1 zoom " onclick="testfun('Excuses')"><div class="flex">
+                                <div class="index i"><p>1</p></div>
+                                <div class="list-img"><img src="media/cover/Excuses.jpg"></div>
+                                <div class="index t"><p>Excuses</p></div>
+                                <div class="index sub-ttl"><p>AP Dhillon, Gurinder Gill, Intense</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Excuses<p></div>
+                                        <div class="index dur"><p>02:56<p></div></div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Chaand Baaliyan')"><div class="flex">
+                                <div class="index i"><p>2</p></div>
+                                <div class="list-img"><img src="media/cover/Chaand Baaliyan.jpg"></div>
+                                <div class="index t"><p>Chaand Baaliyan</p></div>
+                                <div class="index sub-ttl"><p>Aditya A</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Chaand Baaliyan<p></div>
+                                        <div class="index dur"><p>01:46<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Heat Waves')"><div class="flex">
+                                <div class="index i"><p>3</p></div>
+                                <div class="list-img"><img src="media/cover/Heat Waves.jpg"></div>
+                                <div class="index t"><p>Heat Waves</p></div>
+                                <div class="index sub-ttl"><p>Glass Animals</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Dreamland<p></div>
+                                        <div class="index dur"><p>03:58<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Raatan Lambiyan')"><div class="flex">
+                                <div class="index i"><p>4</p></div>
+                                <div class="list-img"><img src="media/cover/Raatan Lambiyan.jpg"></div>
+                                <div class="index t"><p>Raatan Lambiyan</p></div>
+                                <div class="index sub-ttl"><p>Tanishk Bagchi, Jubin Nautiyal, Asees Kaur</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Raatan Lambiyan (From "Shershaah")<p></div>
+                                        <div class="index dur"><p>03:53<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Desires')"><div class="flex">
+                                <div class="index i"><p>5</p></div>
+                                <div class="list-img"><img src="media/cover/Desires.jpg"></div>
+                                <div class="index t"><p>Desires</p></div>
+                                <div class="index sub-ttl"><p>Ap Dhillon, Gurinder Gill</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>HIDDEN GEMS<p></div>
+                                        <div class="index dur"><p>02:32<p></div></div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Doobey')"><div class="flex">
+                                <div class="index i"><p>6</p></div>
+                                <div class="list-img"><img src="media/cover/Doobey.jpg"></div>
+                                <div class="index t"><p>Doobey</p></div>
+                                <div class="index sub-ttl"><p>OAFF, Savera, Lothika, Kausar Munir</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Doobey (From "Gehraiyaan")<p></div>
+                                        <div class="index dur"><p>02:17<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Insane')"><div class="flex">
+                                <div class="index i"><p>7</p></div>
+                                <div class="list-img"><img src="media/cover/Insane.jpg"></div>
+                                <div class="index t"><p>Insane</p></div>
+                                <div class="index sub-ttl"><p>AP Dhillon, Shinda Kahlon, Gurinder Gill, Gminxr</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Insane<p></div>
+                                        <div class="index dur"><p>03:23<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Ranjha')"><div class="flex">
+                                <div class="index i"><p>8</p></div>
+                                <div class="list-img"><img src="media/cover/Ranjha.jpg"></div>
+                                <div class="index t"><p>Ranjha</p></div>
+                                <div class="index sub-ttl"><p>Jasleen Royal, B Praak, Romy, Anvita Dutt</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Ranjha (From "Shershaah")<p></div>
+                                        <div class="index dur"><p>03:50<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Stay')"><div class="flex">
+                                <div class="index i"><p>9</p></div>
+                                <div class="list-img"><img src="media/cover/STAY.jpg"></div>
+                                <div class="index t"><p>STAY</p></div>
+                                <div class="index sub-ttl"><p>Justin Bieber, The Kid LAROI</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>STAY with (Justin Bieber)<p></div>
+                                        <div class="index dur"><p>03:50<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Brown Munde')"><div class="flex">
+                                <div class="index i"><p>10</p></div>
+                                <div class="list-img"><img src="media/cover/Brown Munde.jpg"></div>
+                                <div class="index t"><p>Brown Munde</p></div>
+                                <div class="index sub-ttl"><p>AP Dhillon</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Brown Munde<p></div>
+                                        <div class="index dur"><p>04:20<p></div></div>
+                        </div>
+                        </div>
+                </div>
+        </div>
+
+        <div id="myModal2" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content mdl2">
+                        <span class="close 2">&times;</span>
+                        <div>
+                                <div class="c-img m-img">
+                                        <img src="media/cover/playlist/Top-10-World.png" width="100px" height="100px">
+                                </div>
+                                <div>
+                                        <div class="m-title"><b>Top 10 in World</b></div>
+                                        <div class="m-sub-title">Collection of the most played tracks right now - World.</div>
+                                </div>
+                        </div>
+                        <div class="model-song">
+                        <div class="card1 zoom " onclick="testfun('Envolver')"><div class="flex">
+                                <div class="index i"><p>1</p></div>
+                                <div class="list-img"><img src="media/cover/Envolver.jpg"></div>
+                                <div class="index t"><p>Envolver</p></div>
+                                <div class="index sub-ttl"><p>Anitta</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Envolver<p></div>
+                                        <div class="index dur"><p>03:13<p></div></div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Heat Waves')"><div class="flex">
+                                <div class="index i"><p>2</p></div>
+                                <div class="list-img"><img src="media/cover/Heat Waves.jpg"></div>
+                                <div class="index t"><p>Heat Waves</p></div>
+                                <div class="index sub-ttl"><p>Glass Animals</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Dreamland<p></div>
+                                        <div class="index dur"><p>03:58<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Plan A')"><div class="flex">
+                                <div class="index i"><p>3</p></div>
+                                <div class="list-img"><img src="media/cover/Plan A.jpg"></div>
+                                <div class="index t"><p>Plan A</p></div>
+                                <div class="index sub-ttl"><p>Paulo Londra</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Plan A<p></div>
+                                        <div class="index dur"><p>02:57<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Stay')"><div class="flex">
+                                <div class="index i"><p>4</p></div>
+                                <div class="list-img"><img src="media/cover/STAY.jpg"></div>
+                                <div class="index t"><p>STAY</p></div>
+                                <div class="index sub-ttl"><p>Justin Bieber, The Kid LAROI</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>STAY with (Justin Bieber)<p></div>
+                                        <div class="index dur"><p>03:50<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Enemy (with JID)')"><div class="flex">
+                                <div class="index i"><p>5</p></div>
+                                <div class="list-img"><img src="media/cover/Enemy (with JID).jpg"></div>
+                                <div class="index t"><p>Enemy (with JID)</p></div>
+                                <div class="index sub-ttl"><p>Imagin Dragon, JID, Arcane, League of Legends</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Mercury-Act 1<p></div>
+                                        <div class="index dur"><p>02:53<p></div></div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Cold Heart')"><div class="flex">
+                                <div class="index i"><p>6</p></div>
+                                <div class="list-img"><img src="media/cover/Cold Heart.jpg"></div>
+                                <div class="index t"><p>Cold Heart</p></div>
+                                <div class="index sub-ttl"><p>Elton John, Dua Lipa, PNAU</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>The Lockdown Sessions<p></div>
+                                        <div class="index dur"><p>03:22<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('INDUSTRY BABY')"><div class="flex">
+                                <div class="index i"><p>7</p></div>
+                                <div class="list-img"><img src="media/cover/INDUSTRY BABY.jpg"></div>
+                                <div class="index t"><p>INDUSTRY BABY</p></div>
+                                <div class="index sub-ttl"><p>Lil Nas X, Jack Harlow</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>MONTERO<p></div>
+                                        <div class="index dur"><p>03:32<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('MIDDLE OF THE NIGHT')"><div class="flex">
+                                <div class="index i"><p>8</p></div>
+                                <div class="list-img"><img src="media/cover/Middle of the Night.jpg"></div>
+                                <div class="index t"><p>MIDDLE OF THE NIGHT</p></div>
+                                <div class="index sub-ttl"><p>Elley Duhe</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>MIDDLE OF THE NIGHT<p></div>
+                                        <div class="index dur"><p>03:04<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Pepas')"><div class="flex">
+                                <div class="index i"><p>9</p></div>
+                                <div class="list-img"><img src="media/cover/Pepas.jpg"></div>
+                                <div class="index t"><p>Pepas</p></div>
+                                <div class="index sub-ttl"><p>Farruko</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>La 167<p></div>
+                                        <div class="index dur"><p>04:47<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Easy On Me')"><div class="flex">
+                                <div class="index i"><p>10</p></div>
+                                <div class="list-img"><img src="media/cover/Easy On Me.jpg"></div>
+                                <div class="index t"><p>Easy On Me</p></div>
+                                <div class="index sub-ttl"><p>Adele</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Easy On Me<p></div>
+                                        <div class="index dur"><p>03:44<p></div></div>
+                        </div>
+                        </div>
+                </div>
+        </div>
+
+        <div id="myModal3" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content mdl3">
+                        <span class="close 3">&times;</span>
+                        <div>
+                                <div class="c-img m-img">
+                                        <img src="media/cover/playlist/Top-10-Dj.png" width="100px" height="100px">
+                                </div>
+                                <div>
+                                        <div class="m-title"><b>Top 10 Trending Dj</b></div>
+                                        <div class="m-sub-title">Never Stop the party with Top 10 Dj Songs</div>
+                                </div>
+                        </div>
+                        <div class="model-song">
+                        <div class="card1 zoom " onclick="testfun('Alive')">
+                                <div class="flex">
+                                        <div class="index i"><p>1</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/Alive.jpg">
+                                        </div>
+                                        <div class="index t"><p>Alive</p></div>
+                                        <div class="index sub-ttl"><p>Krewella</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Get Wet<p></div>
+                                        <div class="index dur"><p>03:26<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('More Than You Know')">
+                                <div class="flex">
+                                        <div class="index i"><p>2</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/More Than You Know.jpg">
+                                        </div>
+                                        <div class="index t"><p>More Than You Know</p></div>
+                                        <div class="index sub-ttl"><p>Axwell /\ Ingrosso</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>More Than You Know<p></div>
+                                        <div class="index dur"><p>03:23<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('The Nights')">
+                                <div class="flex">
+                                        <div class="index i"><p>3</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/The Nights.jpg">
+                                        </div>
+                                        <div class="index t"><p>The Nights</p></div>
+                                        <div class="index sub-ttl"><p>Avicii</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>The Days/Nights<p></div>
+                                        <div class="index dur"><p>02:53<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Levels (Radio Edit)')">
+                                <div class="flex">
+                                        <div class="index i"><p>4</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/Levels (Radio Edit).jpg">
+                                        </div>
+                                        <div class="index t"><p>Levels (Radio Edit)</p></div>
+                                        <div class="index sub-ttl"><p>Avicii</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Levels<p></div>
+                                        <div class="index dur"><p>03:19<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Titanium (feat. Sia)')">
+                                <div class="flex">
+                                        <div class="index i"><p>5</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/Titanium (feat. Sia).jpg">
+                                        </div>
+                                        <div class="index t"><p>Titanium (feat. Sia)</p></div>
+                                        <div class="index sub-ttl"><p>David Guetta, Sia</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Nothing But the beat<p></div>
+                                        <div class="index dur"><p>03:55<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('I could be the one')">
+                                <div class="flex">
+                                        <div class="index i"><p>6</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/I could be the one.jpg">
+                                        </div>
+                                        <div class="index t"><p>I Could Be The One</p></div>
+                                        <div class="index sub-ttl"><p>Avicii, Nicky Romero</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>I Could Be The One<p></div>
+                                        <div class="index dur"><p>03:35<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Dont Let Me Down')">
+                                <div class="flex">
+                                        <div class="index i"><p>7</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/Dont Let Me Down.jpg">
+                                        </div>
+                                        <div class="index t"><p>Don't Let Me Down</p></div>
+                                        <div class="index sub-ttl"><p>The Chainsmokers, Daya</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Don't Let Me Down<p></div>
+                                        <div class="index dur"><p>03:26<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Wake Me Up')">
+                                <div class="flex">
+                                        <div class="index i"><p>8</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/Wake Me Up.jpg">
+                                        </div>
+                                        <div class="index t"><p>Wake Me Up</p></div>
+                                        <div class="index sub-ttl"><p>Avicii</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>True<p></div>
+                                        <div class="index dur"><p>04:11<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Alone')">
+                                <div class="flex">
+                                        <div class="index i"><p>9</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/Alone.jpg">
+                                        </div>
+                                        <div class="index t"><p>Alone</p></div>
+                                        <div class="index sub-ttl"><p>Marshmello</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Alone<p></div>
+                                        <div class="index dur"><p>04:31<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Hey Brother')">
+                                <div class="flex">
+                                        <div class="index i"><p>10</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/Hey Brother.jpg">
+                                        </div>
+                                        <div class="index t"><p>Hey Brother</p></div>
+                                        <div class="index sub-ttl"><p>Avicii</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>True<p></div>
+                                        <div class="index dur"><p>04:18<p></div>
+                                </div>
+                        </div>
+                        </div>
+                </div>
+        </div>
+
+        <div id="myModal4" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content mdl4">
+                        <span class="close 4">&times;</span>
+                        <div>
+                                <div class="c-img m-img">
+                                        <img src="media/cover/playlist/Top-10-Lofi.png" width="100px" height="100px">
+                                </div>
+                                <div>
+                                        <div class="m-title"><b>Lofi Special Music</b></div>
+                                        <div class="m-sub-title">Your one stop Destination for your late night mood</div>
+                                </div>
+                        </div>
+                        <div class="model-song">
+                        <div class="card1 zoom " onclick="testfun('Agar Tum Saath Ho - Lofi')"><div class="flex">
+                                <div class="index i"><p>1</p></div>
+                                <div class="list-img"><img src="media/cover/Lofi.png"></div>
+                                <div class="index t"><p>Agar Tum Saath Ho - Lofi</p></div>
+                                <div class="index sub-ttl"><p>Agar Tum Saath Ho</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Lofi Song<p></div>
+                                        <div class="index dur"><p>04:29<p></div></div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Arcade - Lofi')"><div class="flex">
+                                <div class="index i"><p>2</p></div>
+                                <div class="list-img"><img src="media/cover/Lofi.png"></div>
+                                <div class="index t"><p>Arcade - Lofi</p></div>
+                                <div class="index sub-ttl"><p>Arcade</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Lofi Song<p></div>
+                                        <div class="index dur"><p>03:37<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Changes - Lofi')"><div class="flex">
+                                <div class="index i"><p>3</p></div>
+                                <div class="list-img"><img src="media/cover/Lofi.png"></div>
+                                <div class="index t"><p>Changes - Lofi</p></div>
+                                <div class="index sub-ttl"><p>Changes</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Lofi Song<p></div>
+                                        <div class="index dur"><p>02:16<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('I See Fire')"><div class="flex">
+                                <div class="index i"><p>4</p></div>
+                                <div class="list-img"><img src="media/cover/Lofi.png"></div>
+                                <div class="index t"><p>I See Fire</p></div>
+                                <div class="index sub-ttl"><p>Ed Sheeran</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>The Hobbit<p></div>
+                                        <div class="index dur"><p>05:05<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Iktara - Lofi')"><div class="flex">
+                                <div class="index i"><p>5</p></div>
+                                <div class="list-img"><img src="media/cover/Lofi.png"></div>
+                                <div class="index t"><p>Iktara - Lofi</p></div>
+                                <div class="index sub-ttl"><p>Iktara</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Lofi Song<p></div>
+                                        <div class="index dur"><p>02:54<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Night Changes')"><div class="flex">
+                                <div class="index i"><p>6</p></div>
+                                <div class="list-img"><img src="media/cover/Lofi.png"></div>
+                                <div class="index t"><p>Night Changes</p></div>
+                                <div class="index sub-ttl"><p>One Direction</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Four<p></div>
+                                        <div class="index dur"><p>04:30<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Over Again')"><div class="flex">
+                                <div class="index i"><p>7</p></div>
+                                <div class="list-img"><img src="media/cover/Lofi.png"></div>
+                                <div class="index t"><p>Over Again</p></div>
+                                <div class="index sub-ttl"><p>One Direction</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Take Me Home<p></div>
+                                        <div class="index dur"><p>03:09<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Saibo - Lofi')"><div class="flex">
+                                <div class="index i"><p>8</p></div>
+                                <div class="list-img"><img src="media/cover/Lofi.png"></div>
+                                <div class="index t"><p>Saibo - Lofi</p></div>
+                                <div class="index sub-ttl"><p>Saibo</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Lofi Song<p></div>
+                                        <div class="index dur"><p>02:28<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Tum kyu Chale Aate Ho -  Lofi')"><div class="flex">
+                                <div class="index i"><p>9</p></div>
+                                <div class="list-img"><img src="media/cover/Lofi.png"></div>
+                                <div class="index t"><p>Tum kyu Chale Aate Ho -  Lofi</p></div>
+                                <div class="index sub-ttl"><p>Tum kyu Chale Aate Ho</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Lofi Song<p></div>
+                                        <div class="index dur"><p>02:32<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Tum Mile - Lofi')"><div class="flex">
+                                <div class="index i"><p>10</p></div>
+                                <div class="list-img"><img src="media/cover/Lofi.png"></div>
+                                <div class="index t"><p>Tum Mile - Lofi</p></div>
+                                <div class="index sub-ttl"><p>Tum Mile</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Lofi Song<p></div>
+                                        <div class="index dur"><p>05:43<p></div>
+                                </div>
+                        </div>
+                        </div>
+                </div>
+        </div>
+
+        <div id="myModal9" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content mdl9">
+                        <span class="close 9">&times;</span>
+                        <div>
+                                <div class="c-img m-img">
+                                        <img src="media/cover/playlist/Top-10-Party.png" width="100px" height="100px">
+                                </div>
+                                <div>
+                                        <div class="m-title"><b>Party Special</b></div>
+                                        <div class="m-sub-title">Get the Party Started, best songs for any occasions</div>
+                                </div>
+                        </div>
+                        <div class="model-song">
+                        <div class="card1 zoom " onclick="testfun('Excuses')">
+                                <div class="flex">
+                                        <div class="index i"><p>1</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/18.jpg">
+                                        </div>
+                                        <div class="index t"><p>Excuses</p></div>
+                                        <div class="index sub-ttl"><p>AP Dhillon, Gurinder Gill, Intense</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Excuses<p></div>
+                                        <div class="index dur"><p>02:56<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Chaand Baaliyan')">
+                                <div class="flex">
+                                        <div class="index i"><p>2</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/18.jpg">
+                                        </div>
+                                        <div class="index t"><p>Chaand Baaliyan</p></div>
+                                        <div class="index sub-ttl"><p>Aditya A</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Chaand Baaliyan<p></div>
+                                        <div class="index dur"><p>01:46<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Heat Waves')">
+                                <div class="flex">
+                                        <div class="index i"><p>3</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/18.jpg">
+                                        </div>
+                                        <div class="index t"><p>Heat Waves</p></div>
+                                        <div class="index sub-ttl"><p>Glass Animals</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Dreamland<p></div>
+                                        <div class="index dur"><p>03:58<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Raatan Lambiyan')">
+                                <div class="flex">
+                                        <div class="index i"><p>4</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/18.jpg">
+                                        </div>
+                                        <div class="index t"><p>Raatan Lambiyan</p></div>
+                                        <div class="index sub-ttl"><p>Tanishk Bagchi, Jubin Nautiyal, Asees Kaur</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Raatan Lambiyan (From "Shershaah")<p></div>
+                                        <div class="index dur"><p>03:53<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Desires')">
+                                <div class="flex">
+                                        <div class="index i"><p>5</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/18.jpg">
+                                        </div>
+                                        <div class="index t"><p>Desires</p></div>
+                                        <div class="index sub-ttl"><p>Ap Dhillon, Gurinder Gill</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>HIDDEN GEMS<p></div>
+                                        <div class="index dur"><p>02:32<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Doobey')">
+                                <div class="flex">
+                                        <div class="index i"><p>6</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/18.jpg">
+                                        </div>
+                                        <div class="index t"><p>Doobey</p></div>
+                                        <div class="index sub-ttl"><p>OAFF, Savera, Lothika, Kausar Munir</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Doobey (From "Gehraiyaan")<p></div>
+                                        <div class="index dur"><p>02:17<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Insane')">
+                                <div class="flex">
+                                        <div class="index i"><p>7</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/18.jpg">
+                                        </div>
+                                        <div class="index t"><p>Insane</p></div>
+                                        <div class="index sub-ttl"><p>AP Dhillon, Shinda Kahlon, Gurinder Gill, Gminxr</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Insane<p></div>
+                                        <div class="index dur"><p>03:23<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Ranjha')">
+                                <div class="flex">
+                                        <div class="index i"><p>8</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/18.jpg">
+                                        </div>
+                                        <div class="index t"><p>Ranjha</p></div>
+                                        <div class="index sub-ttl"><p>Jasleen Royal, B Praak, Romy, Anvita Dutt</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Ranjha (From "Shershaah")<p></div>
+                                        <div class="index dur"><p>03:50<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Stay')">
+                                <div class="flex">
+                                        <div class="index i"><p>9</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/18.jpg">
+                                        </div>
+                                        <div class="index t"><p>STAY</p></div>
+                                        <div class="index sub-ttl"><p>Justin Bieber, The Kid LAROI</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>STAY with (Justin Bieber)<p></div>
+                                        <div class="index dur"><p>03:50<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Brown Munde')">
+                                <div class="flex">
+                                        <div class="index i"><p>10</p></div>
+                                        <div class="list-img">
+                                                <img src="media/cover/18.jpg">
+                                        </div>
+                                        <div class="index t"><p>Brown Munde</p></div>
+                                        <div class="index sub-ttl"><p>AP Dhillon</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Brown Munde<p></div>
+                                        <div class="index dur"><p>04:20<p></div>
+                                </div>
+                        </div>
+                        </div>
+                </div>
+        </div>
+
+        <div id="myModal10" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content mdl10">
+                        <span class="close 10">&times;</span>
+                        <div>
+                                <div class="c-img m-img">
+                                        <img src="media/cover/playlist/Independence-Day.png" width="100px" height="100px">
+                                </div>
+                                <div>
+                                        <div class="m-title"><b>Independence Day</b></div>
+                                        <div class="m-sub-title">The most loved patriotic tunes to celebrate India.</div>
+                                </div>
+                        </div>
+                        <div class="model-song">
+                        <div class="card1 zoom " onclick="testfun('Bharat Humko Jaan Se Pyara Hai')"><div class="flex">
+                                <div class="index i"><p>1</p></div>
+                                <div class="list-img"><img src="media/cover/Lofi.png"></div>
+                                <div class="index t"><p>Bharat Humko Jaan Se Pyara Hai</p></div>
+                                <div class="index sub-ttl"><p>A.R. Rahman, Hariharan</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Roza<p></div>
+                                        <div class="index dur"><p>03:17<p></div></div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Chak De India')"><div class="flex">
+                                <div class="index i"><p>2</p></div>
+                                <div class="list-img"><img src="media/cover/Lofi.png"></div>
+                                <div class="index t"><p>Chak De India</p></div>
+                                <div class="index sub-ttl"><p>&nbsp;</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Chak De India<p></div>
+                                        <div class="index dur"><p>02:44<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('JaNa GaNa MaNa')"><div class="flex">
+                                <div class="index i"><p>3</p></div>
+                                <div class="list-img"><img src="media/cover/Lofi.png"></div>
+                                <div class="index t"><p>Jana Gana Mana</p></div>
+                                <div class="index sub-ttl"><p></p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p><p></div>
+                                        <div class="index dur"><p>06:41<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Kandho Se Milte Hain Kandhe')"><div class="flex">
+                                <div class="index i"><p>4</p></div>
+                                <div class="list-img"><img src="media/cover/Lofi.png"></div>
+                                <div class="index t"><p>Kandho Se Milte Hain Kandhe</p></div>
+                                <div class="index sub-ttl"><p>Shankar Mahadevan, Sonu Nigam</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Lakshay<p></div>
+                                        <div class="index dur"><p>05:27<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Teri Mitti')"><div class="flex">
+                                <div class="index i"><p>5</p></div>
+                                <div class="list-img"><img src="media/cover/Lofi.png"></div>
+                                <div class="index t"><p>Teri Mitti</p></div>
+                                <div class="index sub-ttl"><p>Arko, B Prak</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Kesari<p></div>
+                                        <div class="index dur"><p>05:25<p></div>
+                                </div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Maa Tujhe Salaam')"><div class="flex">
+                                <div class="index i"><p>6</p></div>
+                                <div class="list-img"><img src="media/cover/Lofi.png"></div>
+                                <div class="index t"><p>Maa Tujhe Salaam</p></div>
+                                <div class="index sub-ttl"><p>A.R. Rahman</p></div>
+                                </div>
+                                <div class="rflex">
+                                        <div class="index album"><p>A.R. Rahman - Voice of a Nation<p></div>
+                                        <div class="index dur"><p>04:43<p></div>
+                                </div>
+                        </div>
+                        </div>
+                </div>
+        </div>
+
+        <div id="myModal11" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content mdl11">
+                        <span class="close 11">&times;</span>
+                        <div>
+                                <div class="c-img m-img">
+                                        <img src="media/cover/playlist/Hindi.png" width="100px" height="100px">
+                                </div>
+                                <div>
+                                        <div class="m-title"><b>Hindi</b></div>
+                                        <div class="m-sub-title">Hottest Hindi music served here.</div>
+                                </div>
+                        </div>
+                        <div class="model-song">
+                        <div class="card1 zoom " onclick="testfun('Excuses')"><div class="flex">
+                                <div class="index i"><p>1</p></div>
+                                <div class="list-img"><img src="media/cover/Excuses.jpg"></div>
+                                <div class="index t"><p>Excuses</p></div>
+                                <div class="index sub-ttl"><p>AP Dhillon, Gurinder Gill, Intense</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Excuses<p></div>
+                                        <div class="index dur"><p>02:56<p></div></div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Chaand Baaliyan')"><div class="flex">
+                                <div class="index i"><p>2</p></div>
+                                <div class="list-img"><img src="media/cover/Chaand Baaliyan.jpg"></div>
+                                <div class="index t"><p>Chaand Baaliyan</p></div>
+                                <div class="index sub-ttl"><p>Aditya A</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Chaand Baaliyan<p></div>
+                                        <div class="index dur"><p>01:46<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Heat Waves')"><div class="flex">
+                                <div class="index i"><p>3</p></div>
+                                <div class="list-img"><img src="media/cover/Heat Waves.jpg"></div>
+                                <div class="index t"><p>Heat Waves</p></div>
+                                <div class="index sub-ttl"><p>Glass Animals</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Dreamland<p></div>
+                                        <div class="index dur"><p>03:58<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Raatan Lambiyan')"><div class="flex">
+                                <div class="index i"><p>4</p></div>
+                                <div class="list-img"><img src="media/cover/Raatan Lambiyan.jpg"></div>
+                                <div class="index t"><p>Raatan Lambiyan</p></div>
+                                <div class="index sub-ttl"><p>Tanishk Bagchi, Jubin Nautiyal, Asees Kaur</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Raatan Lambiyan (From "Shershaah")<p></div>
+                                        <div class="index dur"><p>03:53<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Desires')"><div class="flex">
+                                <div class="index i"><p>5</p></div>
+                                <div class="list-img"><img src="media/cover/Desires.jpg"></div>
+                                <div class="index t"><p>Desires</p></div>
+                                <div class="index sub-ttl"><p>Ap Dhillon, Gurinder Gill</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>HIDDEN GEMS<p></div>
+                                        <div class="index dur"><p>02:32<p></div></div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Doobey')"><div class="flex">
+                                <div class="index i"><p>6</p></div>
+                                <div class="list-img"><img src="media/cover/Doobey.jpg"></div>
+                                <div class="index t"><p>Doobey</p></div>
+                                <div class="index sub-ttl"><p>OAFF, Savera, Lothika, Kausar Munir</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Doobey (From "Gehraiyaan")<p></div>
+                                        <div class="index dur"><p>02:17<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Insane')"><div class="flex">
+                                <div class="index i"><p>7</p></div>
+                                <div class="list-img"><img src="media/cover/Insane.jpg"></div>
+                                <div class="index t"><p>Insane</p></div>
+                                <div class="index sub-ttl"><p>AP Dhillon, Shinda Kahlon, Gurinder Gill, Gminxr</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Insane<p></div>
+                                        <div class="index dur"><p>03:23<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Ranjha')"><div class="flex">
+                                <div class="index i"><p>8</p></div>
+                                <div class="list-img"><img src="media/cover/Ranjha.jpg"></div>
+                                <div class="index t"><p>Ranjha</p></div>
+                                <div class="index sub-ttl"><p>Jasleen Royal, B Praak, Romy, Anvita Dutt</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Ranjha (From "Shershaah")<p></div>
+                                        <div class="index dur"><p>03:50<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Stay')"><div class="flex">
+                                <div class="index i"><p>9</p></div>
+                                <div class="list-img"><img src="media/cover/STAY.jpg"></div>
+                                <div class="index t"><p>STAY</p></div>
+                                <div class="index sub-ttl"><p>Justin Bieber, The Kid LAROI</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>STAY with (Justin Bieber)<p></div>
+                                        <div class="index dur"><p>03:50<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Brown Munde')"><div class="flex">
+                                <div class="index i"><p>10</p></div>
+                                <div class="list-img"><img src="media/cover/Brown Munde.jpg"></div>
+                                <div class="index t"><p>Brown Munde</p></div>
+                                <div class="index sub-ttl"><p>AP Dhillon</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Brown Munde<p></div>
+                                        <div class="index dur"><p>04:20<p></div></div>
+                        </div>
+                        </div>
+                </div>
+        </div>
+
+        <div id="myModal12" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content mdl12">
+                        <span class="close 12">&times;</span>
+                        <div>
+                                <div class="c-img m-img">
+                                        <img src="media/cover/playlist/English.png" width="100px" height="100px">
+                                </div>
+                                <div>
+                                        <div class="m-title"><b>English</b></div>
+                                        <div class="m-sub-title">Trending English Songs</div>
+                                </div>
+                        </div>
+                        <div class="model-song">
+                        <div class="card1 zoom " onclick="testfun('Envolver')"><div class="flex">
+                                <div class="index i"><p>1</p></div>
+                                <div class="list-img"><img src="media/cover/Envolver.jpg"></div>
+                                <div class="index t"><p>Envolver</p></div>
+                                <div class="index sub-ttl"><p>Anitta</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Envolver<p></div>
+                                        <div class="index dur"><p>03:13<p></div></div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Heat Waves')"><div class="flex">
+                                <div class="index i"><p>2</p></div>
+                                <div class="list-img"><img src="media/cover/Heat Waves.jpg"></div>
+                                <div class="index t"><p>Heat Waves</p></div>
+                                <div class="index sub-ttl"><p>Glass Animals</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Dreamland<p></div>
+                                        <div class="index dur"><p>03:58<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Plan A')"><div class="flex">
+                                <div class="index i"><p>3</p></div>
+                                <div class="list-img"><img src="media/cover/Plan A.jpg"></div>
+                                <div class="index t"><p>Plan A</p></div>
+                                <div class="index sub-ttl"><p>Paulo Londra</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Plan A<p></div>
+                                        <div class="index dur"><p>02:57<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Stay')"><div class="flex">
+                                <div class="index i"><p>4</p></div>
+                                <div class="list-img"><img src="media/cover/STAY.jpg"></div>
+                                <div class="index t"><p>STAY</p></div>
+                                <div class="index sub-ttl"><p>Justin Bieber, The Kid LAROI</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>STAY with (Justin Bieber)<p></div>
+                                        <div class="index dur"><p>03:50<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Enemy (with JID)')"><div class="flex">
+                                <div class="index i"><p>5</p></div>
+                                <div class="list-img"><img src="media/cover/Enemy (with JID).jpg"></div>
+                                <div class="index t"><p>Enemy (with JID)</p></div>
+                                <div class="index sub-ttl"><p>Imagin Dragon, JID, Arcane, League of Legends</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Mercury-Act 1<p></div>
+                                        <div class="index dur"><p>02:53<p></div></div>
+                        </div>
+                        <div class="card1 zoom " onclick="testfun('Cold Heart')"><div class="flex">
+                                <div class="index i"><p>6</p></div>
+                                <div class="list-img"><img src="media/cover/Cold Heart.jpg"></div>
+                                <div class="index t"><p>Cold Heart</p></div>
+                                <div class="index sub-ttl"><p>Elton John, Dua Lipa, PNAU</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>The Lockdown Sessions<p></div>
+                                        <div class="index dur"><p>03:22<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('INDUSTRY BABY')"><div class="flex">
+                                <div class="index i"><p>7</p></div>
+                                <div class="list-img"><img src="media/cover/INDUSTRY BABY.jpg"></div>
+                                <div class="index t"><p>INDUSTRY BABY</p></div>
+                                <div class="index sub-ttl"><p>Lil Nas X, Jack Harlow</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>MONTERO<p></div>
+                                        <div class="index dur"><p>03:32<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('MIDDLE OF THE NIGHT')"><div class="flex">
+                                <div class="index i"><p>8</p></div>
+                                <div class="list-img"><img src="media/cover/Middle of the Night.jpg"></div>
+                                <div class="index t"><p>MIDDLE OF THE NIGHT</p></div>
+                                <div class="index sub-ttl"><p>Elley Duhe</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>MIDDLE OF THE NIGHT<p></div>
+                                        <div class="index dur"><p>03:04<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Pepas')"><div class="flex">
+                                <div class="index i"><p>9</p></div>
+                                <div class="list-img"><img src="media/cover/Pepas.jpg"></div>
+                                <div class="index t"><p>Pepas</p></div>
+                                <div class="index sub-ttl"><p>Farruko</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>La 167<p></div>
+                                        <div class="index dur"><p>04:47<p></div></div>
+                        </div>
+                        <div class="card1 zoom" onclick="testfun('Easy On Me')"><div class="flex">
+                                <div class="index i"><p>10</p></div>
+                                <div class="list-img"><img src="media/cover/Easy On Me.jpg"></div>
+                                <div class="index t"><p>Easy On Me</p></div>
+                                <div class="index sub-ttl"><p>Adele</p></div></div>
+                                <div class="rflex">
+                                        <div class="index album"><p>Easy On Me<p></div>
+                                        <div class="index dur"><p>03:44<p></div></div>
+                        </div>
+                        </div>
+                </div>
+        </div>
+<!-- Model Ends -->
+
+<!-- All Songs -->
+        <div class="all-songs-content" id="all-songs">
+                <div class="row1">
+                        <div class="column zoom search">
+                                <div class="card1">
+                                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+                                </div>
+                        </div>
+
+                        <ul class="sl" id="myUL">
+                        <div class="card1 zoom f" onclick="testfun('Excuses')">
+                        <div class="flex">
+                                <div class="index i"><p>1</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Excuses.jpg">
+                                </div>
+                                <div class="index t"><p>Excuses</p></div>
+                                <div class="index sub-ttl"><p>AP Dhillon, Gurinder Gill, Intense</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>Excuses<p></div>
+                                <div class="index dur"><p>02:56<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Chaand Baaliyan')">
+                        <div class="flex">
+                                <div class="index i"><p>2</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Chaand Baaliyan.jpg">
+                                </div>
+                                <div class="index t"><p>Chaand Baaliyan</p></div>
+                                <div class="index sub-ttl"><p>Aditya A</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>Chaand Baaliyan<p></div>
+                                <div class="index dur"><p>01:46<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Heat Waves')">
+                        <div class="flex">
+                                <div class="index i"><p>3</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Heat Waves.jpg">
+                                </div>
+                                <div class="index t"><p>Heat Waves</p></div>
+                                <div class="index sub-ttl"><p>Glass Animals</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>Dreamland<p></div>
+                                <div class="index dur"><p>03:58<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Raatan Lambiyan')">
+                        <div class="flex">
+                                <div class="index i"><p>4</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Raatan Lambiyan.jpg">
+                                </div>
+                                <div class="index t"><p>Raatan Lambiyan</p></div>
+                                <div class="index sub-ttl"><p>Tanishk Bagchi, Jubin Nautiyal, Asees Kaur</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>Raatan Lambiyan (From "Shershaah")<p></div>
+                                <div class="index dur"><p>03:53<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Desires')">
+                        <div class="flex">
+                                <div class="index i"><p>5</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Desires.jpg">
+                                </div>
+                                <div class="index t"><p>Desires</p></div>
+                                <div class="index sub-ttl"><p>Ap Dhillon, Gurinder Gill</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>HIDDEN GEMS<p></div>
+                                <div class="index dur"><p>02:32<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Doobey')">
+                        <div class="flex">
+                                <div class="index i"><p>6</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Doobey.jpg">
+                                </div>
+                                <div class="index t"><p>Doobey</p></div>
+                                <div class="index sub-ttl"><p>OAFF, Savera, Lothika, Kausar Munir</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>Doobey (From "Gehraiyaan")<p></div>
+                                <div class="index dur"><p>02:17<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Insane')">
+                        <div class="flex">
+                                <div class="index i"><p>7</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Insane.jpg">
+                                </div>
+                                <div class="index t"><p>Insane</p></div>
+                                <div class="index sub-ttl"><p>AP Dhillon, Shinda Kahlon, Gurinder Gill, Gminxr</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>Insane<p></div>
+                                <div class="index dur"><p>03:23<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Ranjha')">
+                        <div class="flex">
+                                <div class="index i"><p>8</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Ranjha.jpg">
+                                </div>
+                                <div class="index t"><p>Ranjha</p></div>
+                                <div class="index sub-ttl"><p>Jasleen Royal, B Praak, Romy, Anvita Dutt</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>Ranjha (From "Shershaah")<p></div>
+                                <div class="index dur"><p>03:50<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Stay')">
+                        <div class="flex">
+                                <div class="index i"><p>9</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/STAY.jpg">
+                                </div>
+                                <div class="index t"><p>STAY</p></div>
+                                <div class="index sub-ttl"><p>Justin Bieber, The Kid LAROI</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>STAY with (Justin Bieber)<p></div>
+                                <div class="index dur"><p>03:50<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Brown Munde')">
+                        <div class="flex">
+                                <div class="index i"><p>10</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Brown Munde.jpg">
+                                </div>
+                                <div class="index t"><p>Brown Munde</p></div>
+                                <div class="index sub-ttl"><p>AP Dhillon</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>Brown Munde<p></div>
+                                <div class="index dur"><p>04:20<p></div>
+                        </div>
+                </div>
+                        <div class="card1 zoom f " onclick="testfun('Envolver')">
+                        <div class="flex">
+                                <div class="index i"><p>11</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Envolver.jpg">
+                                </div>
+                                <div class="index t"><p>Envolver</p></div>
+                                <div class="index sub-ttl"><p>Anitta</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>Envolver<p></div>
+                                <div class="index dur"><p>03:13<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f " onclick="testfun('Heat Waves')">
+                        <div class="flex">
+                                <div class="index i"><p>12</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Heat Waves.jpg">
+                                </div>
+                                <div class="index t"><p>Heat Waves</p></div>
+                                <div class="index sub-ttl"><p>Glass Animals</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>Dreamland<p></div>
+                                <div class="index dur"><p>03:58<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Plan A')">
+                        <div class="flex">
+                                <div class="index i"><p>13</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Plan A.jpg">
+                                </div>
+                                <div class="index t"><p>Plan A</p></div>
+                                <div class="index sub-ttl"><p>Paulo Londra</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>Plan A<p></div>
+                                <div class="index dur"><p>02:57<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Stay')">
+                        <div class="flex">
+                                <div class="index i"><p>14</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/STAY.jpg">
+                                </div>
+                                <div class="index t"><p>STAY</p></div>
+                                <div class="index sub-ttl"><p>Justin Bieber, The Kid LAROI</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>STAY with (Justin Bieber)<p></div>
+                                <div class="index dur"><p>03:50<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Enemy (with JID)')">
+                        <div class="flex">
+                                <div class="index i"><p>15</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Enemy (with JID).jpg">
+                                </div>
+                                <div class="index t"><p>Enemy (with JID)</p></div>
+                                <div class="index sub-ttl"><p>Imagin Dragon, JID, Arcane, League of Legends</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>Mercury-Act 1<p></div>
+                                <div class="index dur"><p>02:53<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f " onclick="testfun('Cold Heart')">
+                        <div class="flex">
+                                <div class="index i"><p>16</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Cold Heart.jpg">
+                                </div>
+                                <div class="index t"><p>Cold Heart</p></div>
+                                <div class="index sub-ttl"><p>Elton John, Dua Lipa, PNAU</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>The Lockdown Sessions<p></div>
+                                <div class="index dur"><p>03:22<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('INDUSTRY BABY')">
+                        <div class="flex">
+                                <div class="index i"><p>17</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/INDUSTRY BABY.jpg">
+                                </div>
+                                <div class="index t"><p>INDUSTRY BABY</p></div>
+                                <div class="index sub-ttl"><p>Lil Nas X, Jack Harlow</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>MONTERO<p></div>
+                                <div class="index dur"><p>03:32<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('MIDDLE OF THE NIGHT')">
+                        <div class="flex">
+                                <div class="index i"><p>18</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Middle of the Night.jpg">
+                                </div>
+                                <div class="index t"><p>MIDDLE OF THE NIGHT</p></div>
+                                <div class="index sub-ttl"><p>Elley Duhe</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>MIDDLE OF THE NIGHT<p></div>
+                                <div class="index dur"><p>03:04<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Pepas')">
+                        <div class="flex">
+                                <div class="index i"><p>19</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Pepas.jpg">
+                                </div>
+                                <div class="index t"><p>Pepas</p></div>
+                                <div class="index sub-ttl"><p>Farruko</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>La 167<p></div>
+                                <div class="index dur"><p>04:47<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Easy On Me')">
+                        <div class="flex">
+                                <div class="index i"><p>20</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Easy On Me.jpg">
+                                </div>
+                                <div class="index t"><p>Easy On Me</p></div>
+                                <div class="index sub-ttl"><p>Adele</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>Easy On Me<p></div>
+                                <div class="index dur"><p>03:44<p></div>
+                        </div>
+                </div>
+                        <div class="card1 zoom f " onclick="testfun('Alive')">
+                        <div class="flex">
+                                <div class="index i"><p>21</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Alive.jpg">
+                                </div>
+                                <div class="index t"><p>Alive</p></div>
+                                <div class="index sub-ttl"><p>Krewella</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>Get Wet<p></div>
+                                <div class="index dur"><p>03:26<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f " onclick="testfun('More Than You Know')">
+                        <div class="flex">
+                                <div class="index i"><p>22</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/More Than You Know.jpg">
+                                </div>
+                                <div class="index t"><p>More Than You Know</p></div>
+                                <div class="index sub-ttl"><p>Axwell /\ Ingrosso</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>More Than You Know<p></div>
+                                <div class="index dur"><p>03:23<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('The Nights')">
+                        <div class="flex">
+                                <div class="index i"><p>23</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/The Nights.jpg">
+                                </div>
+                                <div class="index t"><p>The Nights</p></div>
+                                <div class="index sub-ttl"><p>Avicii</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>The Days/Nights<p></div>
+                                <div class="index dur"><p>02:53<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Levels (Radio Edit)')">
+                        <div class="flex">
+                                <div class="index i"><p>24</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Levels (Radio Edit).jpg">
+                                </div>
+                                <div class="index t"><p>Levels (Radio Edit)</p></div>
+                                <div class="index sub-ttl"><p>Avicii</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>Levels<p></div>
+                                <div class="index dur"><p>03:19<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Titanium (feat. Sia)')">
+                        <div class="flex">
+                                <div class="index i"><p>25</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Titanium.jpg">
+                                </div>
+                                <div class="index t"><p>Titanium (feat. Sia)</p></div>
+                                <div class="index sub-ttl"><p>David Guetta, Sia</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>Nothing But the beat<p></div>
+                                <div class="index dur"><p>03:55<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f " onclick="testfun('I could be the one')">
+                        <div class="flex">
+                                <div class="index i"><p>26</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/I could be the one.jpg">
+                                </div>
+                                <div class="index t"><p>I Could Be The One</p></div>
+                                <div class="index sub-ttl"><p>Avicii, Nicky Romero</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>I Could Be The One<p></div>
+                                <div class="index dur"><p>03:35<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Dont Let Me Down')">
+                        <div class="flex">
+                                <div class="index i"><p>27</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Dont Let Me Down.jpg">
+                                </div>
+                                <div class="index t"><p>Don't Let Me Down</p></div>
+                                <div class="index sub-ttl"><p>The Chainsmokers, Daya</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>Don't Let Me Down<p></div>
+                                <div class="index dur"><p>03:26<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Wake Me Up')">
+                        <div class="flex">
+                                <div class="index i"><p>28</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Wake Me Up.jpg">
+                                </div>
+                                <div class="index t"><p>Wake Me Up</p></div>
+                                <div class="index sub-ttl"><p>Avicii</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>True<p></div>
+                                <div class="index dur"><p>04:11<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Alone')">
+                        <div class="flex">
+                                <div class="index i"><p>29</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Alone.jpg">
+                                </div>
+                                <div class="index t"><p>Alone</p></div>
+                                <div class="index sub-ttl"><p>Marshmello</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>Alone<p></div>
+                                <div class="index dur"><p>04:31<p></div>
+                        </div>
+                </div>
+                <div class="card1 zoom f" onclick="testfun('Hey Brother')">
+                        <div class="flex">
+                                <div class="index i"><p>30</p></div>
+                                <div class="list-img">
+                                        <img src="media/cover/Hey Brother.jpg">
+                                </div>
+                                <div class="index t"><p>Hey Brother</p></div>
+                                <div class="index sub-ttl"><p>Avicii</p></div>
+                        </div>
+                        <div class="rflex">
+                                <div class="index album"><p>True<p></div>
+                                <div class="index dur"><p>04:18<p></div>
+                        </div>
+                </div>
+                        </ul>
+                </div>
+
+
+        </div>
+<!-- All Songs Ends -->
+
+<!-- About -->
+        <center><div id="about">
+                <p>As Music has become an important part of our life through which we which we enjoy, 
+                concentrate or relax our mind. The Project ‘Music Streaming Platform’ allows a single individual to 
+                stream songs from any browser of their choice and explore Artists, Songs and other Playlists. Listen 
+                continuously without any interruption.</p>
+                <br>
+                <p><b><u>Goal:</u></b> - Expand the social functionality of a music streaming by enabling music lovers to 
+                simultaneously listen to songs without downloading any special required software or application which 
+                eliminates storage or system space requirement. It can be access directly with active internet connection 
+                through any browser.</p>
+                <br>
+                <p>This Site is developed as the project for final year of BCCA Semister 6.<br> College : City Premier College. <br>University : Rashtrasant Tukadoji Maharaj Nagpur University<br>Under the Category of Web Based Application</p>
+                <br>
+                <p>Web application development is usually made on client-server architecture and use a 
+                web-browser as the client interface. This is one of the reasons why web applications are so widely getting 
+                popular. Though web applications offer a slight advantage over desktop applications, as there is no 
+                special need of installing software, there is a very narrow chance of desktop applications becoming 
+                outdated.</p>
+                
+                <br><br><p>System Tree Diagram</p>
+                <img src="media/kjh.png" width="500px" height="400px">
+        </div></center>
+<!-- About -->
+
+<!-- Bottom Play Bar -->
+	<div id="body">
+                <div id="play-bar" class="play-bar"> 
+                                <div id="music-container">
+                                <div class="cel">
+                                        <div class="cel-c cel-1">
+                                                <img src="#" id="cover">
+                                        </div>
+                                </div>
+
+                                <div class="cel">
+                                        <div class="cel-c cel-2">
+                                                <div class="cel-2-cnt">
+                                                        <div  class="s-nm">
+                                                                <h4 class="h3"><p class="p-s-nm" id="title">18</p></h4>
+                                                        </div>
+                                                        <div class="a-nm">
+                                                                <p class="p-a-nm" id="artist">Artist Name</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <audio src="media/music/18.mp3" id="audio"></audio>
+                                <div class="alin">
+                                        <div class="cel-c cel-3">
+                                        <!-- <div class="alin"> -->
+                                                <div class="navigation">
+                                                        <button id="prev" class="action-btn">
+                                                                <i class="fas fa-backward"></i>
+                                                        </button>
+                                                        <button id="play" class="action-btn action-btn-big">
+                                                                <i class="fas fa-play"></i>
+                                                        </button>
+                                                        <button id="next" class="action-btn">
+                                                                <i class="fas fa-forward"></i>
+                                                        </button>
+                                                </div>
+
+                                                <div class="sub-time-progress">
+                                                        <div id="currTime" class="cur-tim lin"></div>
+                                                        <div class="progress-container lin" id="progress-container">
+                                                                <div class="progress" id="progress"></div>
+                                                        </div>
+                                                        <div id="durTime" class="totl-time lin"></div>
+                                                </div>
+                                        <!-- </div> -->
+                                        </div>
+                                </div>
+                                  
+                                <div class="cel">
+                                        <div class="cel-c cel-4">
+                                                <h3 class="h3 vol">
+                                                        <span id="demo" class="vol">75</span>
+                                                        <div class="slider-pos">
+                                                                <input type="range" min="1" max="100" value="75" class="slider vol" id="volume-control">
+                                                        </div>
+                                                </h3>
+                                        </div>
+                                </div>
+                                </div>
+                </div>
+	</div>
+<!-- Bottom Play Bar -->
+
+</body>
+</html>
+
+<script type="text/javascript" src="js/js1.js">   </script>
+<script type="text/javascript" src="js/player.js"></script>
+<script type="text/javascript" src="js/model.js"></script>
+
+
+<!-- Reference
+
+        1. Stackoverflow
+        2. W3School
+        3. http://jsfiddle.net/Tymek/yrKRX/ -->
